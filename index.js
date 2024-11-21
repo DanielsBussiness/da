@@ -1,13 +1,13 @@
+require('dotenv').config(); // Load environment variables from the .env file
 const { Client } = require("discord.js-selfbot-v13");
 
-// Replace 'YOUR_USER_TOKEN' with your Discord user token
-const token =
-    "MTA5NDYwNjUzMDU3OTU0NjIyMw.GPIdN1.aX6K7xwJlYZ9kG05Q5wWNBbju5CFCWyfyJCipw";
+// Get the token from the environment variable
+const token = process.env.DISCORD_TOKEN;
 
 const client = new Client();
 
 client.on("ready", () => {
-    console.log(Logged in as ${client.user.tag}!);
+    console.log(`Logged in as ${client.user.tag}!`);
     console.log("Self-bot is now running!");
 });
 
